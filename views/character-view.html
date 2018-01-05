@@ -1,0 +1,18 @@
+<div class="loader centered" ng-show="loader"></div>
+<div style="text-align: center; margin-left: 20%" class="col-md-7" ng-hide="loader">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title" ng-repeat = "alias in charCtrl.character.aliases">{{alias || 'Unavailable'}}</h4>
+            <p class="card-text">Name : {{charCtrl.character.name || 'Unavailable'}}</p>
+            <p class="card-text">Gender : {{charCtrl.character.gender || 'Unavailable'}}</p>
+            <p class="card-text">Born : {{charCtrl.character.born || 'Unavailable'}}</p>
+            <p class="card-text">Died : {{charCtrl.character.died || 'Unavailable'}}</p>
+            <p class="card-text" >Father : {{charCtrl.character.father || 'Unavailable'}}</p>
+            <p class="card-text">Mother : {{charCtrl.character.mother || 'Unavailable'}}</p>
+            <p class="card-text">Culture : {{charCtrl.character.culture || 'Unavailable'}}</p>
+            <p class="card-text" ng-repeat = "books in charCtrl.character.books">Book link : <a href="{{books}}" target="_blank">{{books}}</a></p>
+            <p class="card-text" ng-repeat = "allegiance in charCtrl.character.allegiances">Allegiances : <a href="{{allegiance}}" target="_blank">{{allegiance || 'Unavailable'}}</p>
+        </div>
+    </div>
+    <a class="btn btn-default" href="#!/">Click here to go to Home Page</a>
+</div>

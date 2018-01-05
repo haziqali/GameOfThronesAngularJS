@@ -1,0 +1,22 @@
+<div class="loader centered" ng-show="loader"></div>
+<div style="text-align: center; margin-left: 20%" class="col-md-7" ng-hide="loader">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{houseCtrl.house.name || 'Unavailable'}}</h4>
+            <p class="card-text" >Coat Of Arms : {{houseCtrl.house.coatOfArms || 'Unavailable'}}</p>
+            <p class="card-text" >Region : {{houseCtrl.house.region || 'Unavailable'}}</p>
+            <p class="card-text" ng-repeat="weapon in houseCtrl.house.ancestralWeapons" ng-show = "{{weapon!=''}}">Ancestral Weapon : {{weapon}}</p>
+            <p class="card-text" ng-repeat="cdt in houseCtrl.house.cadetBranches" ng-show = "{{houseCtrl.house.cadetBranches}}">Cadet Branches : {{cdt}}</p>
+            <p class="card-text">Current Lord : <a href="{{houseCtrl.house.currentLord}}" target="_blank">{{houseCtrl.house.currentLord}}</a></p>
+            <p class="card-text">Died Out : {{houseCtrl.house.diedOut || 'Unavailable'}}</p>
+            <p class="card-text">Founded : {{houseCtrl.house.founded || 'Unavailable'}}</p>
+            <p class="card-text" ng-repeat="seat in houseCtrl.house.seats" ng-show="{{seat!=''}}">Seats : {{seat}}</p>
+            <p class="card-text" ng-repeat="title in houseCtrl.house.titles" ng-show="{{title!=''}}">Titles : {{title}}</p>
+            <p class="card-text" >Overlord House : <a href="{{houseCtrl.house.overlord}}" target="_blank">{{houseCtrl.house.overlord}}</a></p>
+            <p class="card-text" ng-repeat = "member in houseCtrl.house.swornMembers">Sworn Members : <a href="{{member}}" target="_blank">{{member}}</a>
+            <p class="card-text"s>Words : {{houseCtrl.house.words || 'Unavailable'}}</p>
+
+        </div>
+    </div>
+    <a class="btn btn-default" href="#!/">Click here to go to Home Page</a>
+</div>

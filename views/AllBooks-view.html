@@ -1,0 +1,16 @@
+<div class="loader centered" ng-show="loader"></div>
+<div style="text-align: center" ng-hide="loader">
+    <label>Filter by Author</label>
+    <input type="text" ng-model="object.authors" style="margin-bottom: 1%"><br>
+    <label>Filter by Book&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" ng-model="object.name" style="margin-bottom: 8%">
+
+    <h3 class="text-center mb-5" style="background-color: black">Books</h3>
+
+    <div class="card card-01 item" ng-repeat="book in books | toArray | orderBy: 'name' | filter: object" ng-animate=" 'animate' " style="background-color: lavender">
+        <div class="card-body">
+            <h4 class="card-title">{{book.name}}</h4>
+            <p class="card-text">Author: {{book.authors[0]}}</p>
+            <a href="#!/book/{{$index+1}}" class="btn btn-default text-uppercase">Click here for Details</a>
+        </div>
+    </div>
+</div>

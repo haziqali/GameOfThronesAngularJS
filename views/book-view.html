@@ -1,0 +1,35 @@
+<div class="loader centered" ng-show="loader"></div>
+<div style="text-align: center; margin-left: 20%" class="col-md-7" ng-hide="loader">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{bookCtrl.book.name}}</h4>
+            <p class="card-text">Type : {{bookCtrl.book.mediaType}}</p>
+            <p class="card-text">Released : {{bookCtrl.book.released | date : short}}</p>
+            <p class="card-text" ng-repeat="author in bookCtrl.book.authors">Author: {{author}}</p>
+            <p class="card-text">Publisher : {{bookCtrl.book.publisher}}</p>
+            <p class="card-text">ISBN : {{bookCtrl.book.isbn}}</p>
+            <p class="card-text">Number of pages : {{bookCtrl.book.numberOfPages}}</p>
+            <p class="card-text">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Click here to view the url for all the characters in the book
+                </button>
+            </p>
+            <div class="collapse" id="collapseOne">
+                <div class="card card-block" ng-repeat="character in bookCtrl.book.characters">
+                    Character url : <a href="{{character}}" target="_blank">{{character}}</a>
+                </div>
+            </div>
+            <p class="card-text">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Click here to view the url for all the POV characters in the book
+                </button>
+            </p>
+            <div class="collapse" id="collapseTwo">
+                <div class="card card-block" ng-repeat="character in bookCtrl.book.povCharacters">
+                    POV Character url : <a href="{{character}}" target="_blank">{{character}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-default" href="#!/">Click here to go to Home Page</a>
+</div>

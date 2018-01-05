@@ -1,0 +1,19 @@
+<div class="loader centered" ng-show="loader"></div>
+
+<div style="text-align: center" ng-hide="loader" >
+
+    Filter by Culture <input type="text" ng-model="object.culture" style="margin-bottom: 1%"><br>
+    Filter by Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="object.aliases" style="margin-bottom: 8%">
+
+    <h3 class="text-center mb-5" style="background-color: black">Characters</h3>
+
+    <div class="card card-01 item" ng-repeat="character in characters | toArray | orderBy: 'aliases' | filter: object" style="background-color: lightyellow;">
+        <div class="card-body">
+            <h4 class="card-title">{{character.aliases[0] || 'Unavailable'}}</h4>
+            <p class="card-text">Gender: {{character.gender || 'Unavailable'}}</p>
+            <a href="#!/character/{{$index+1}}" class="btn btn-default text-uppercase">Click here for Details</a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,17 @@
+<div class="loader centered" ng-show="loader"></div>
+
+<div style="text-align: center" ng-hide="loader" >
+    Filter by Region
+    <input type="text" ng-model="object.region" style="margin-bottom: 1%"><br> Filter by House&nbsp;
+    <input type="text" ng-model="object.name" style="margin-bottom: 8%">
+
+    <h3 class="text-center mb-5" style="background-color: black">Houses</h3>
+
+    <div class="card card-01 item" ng-repeat="house in houses | toArray | orderBy: 'name' | filter: object" style="background-color: blanchedalmond">
+        <div class="card-body">
+            <h4 class="card-title">{{house.name}}</h4>
+            <p class="card-text">Region: {{house.region}}</p>
+            <a href="#!/house/{{$index+1}}" class="btn btn-default text-uppercase">Click here for Details</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+var myApp = angular.module('myApp', ['ngRoute','angular-toArrayFilter','ngAnimate']);
