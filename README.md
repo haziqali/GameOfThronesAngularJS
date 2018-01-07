@@ -1,4 +1,6 @@
 # GameOfThronesAngularJS
+#You can visit this website at http://haziqali.tk/#!/
+
 Web application which fetches data of Game of thrones from a remote API and then displays it neatly in the form of cards with the help of Bootstrap 4 and AngularJS with a few filters.
 
 Clone or download the zip and run index.html in a local web server to view the application.
