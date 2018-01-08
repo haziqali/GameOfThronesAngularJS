@@ -26,6 +26,7 @@ myApp.service('loadDataService',['$http', function($http){
 
         });
     }
+   
 
     this.getCharacter = function(characterId){
         return $http({

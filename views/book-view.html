@@ -1,7 +1,10 @@
+<div ng-controller="bookController as bookCtrl">
 <div class="loader centered" ng-show="loader"></div>
+   
 <div style="text-align: center; margin-left: 20%" class="col-md-7" ng-hide="loader">
     <div class="card">
         <div class="card-body">
+             
             <h4 class="card-title">{{bookCtrl.book.name}}</h4>
             <p class="card-text">Type : {{bookCtrl.book.mediaType}}</p>
             <p class="card-text">Released : {{bookCtrl.book.released | date : short}}</p>
@@ -14,9 +17,11 @@
                     Click here to view the url for all the characters in the book
                 </button>
             </p>
+            
             <div class="collapse" id="collapseOne">
                 <div class="card card-block" ng-repeat="character in bookCtrl.book.characters">
-                    Character url : <a href="{{character}}" target="_blank">{{character}}</a>
+                    <a target="_blank" class="btn" ng-click="bookCtrl.sub(character)" href="#!/character/{{id}}">Click here to view character</a>
+                    
                 </div>
             </div>
             <p class="card-text">
@@ -26,10 +31,11 @@
             </p>
             <div class="collapse" id="collapseTwo">
                 <div class="card card-block" ng-repeat="character in bookCtrl.book.povCharacters">
-                    POV Character url : <a href="{{character}}" target="_blank">{{character}}</a>
+                    <a target="_blank" class="btn" ng-click="bookCtrl.sub(character)" href="#!/character/{{id}}">Click here to view character</a>
                 </div>
             </div>
         </div>
     </div>
     <a class="btn btn-default" href="#!/">Click here to go to Home Page</a>
+</div>
 </div>

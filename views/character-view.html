@@ -10,8 +10,7 @@
             <p class="card-text" >Father : {{charCtrl.character.father || 'Unavailable'}}</p>
             <p class="card-text">Mother : {{charCtrl.character.mother || 'Unavailable'}}</p>
             <p class="card-text">Culture : {{charCtrl.character.culture || 'Unavailable'}}</p>
-            <p class="card-text" ng-repeat = "books in charCtrl.character.books">Book link : <a href="{{books}}" target="_blank">{{books}}</a></p>
-            <p class="card-text" ng-repeat = "allegiance in charCtrl.character.allegiances">Allegiances : <a href="{{allegiance}}" target="_blank">{{allegiance || 'Unavailable'}}</p>
+            <p class="card-text" ng-repeat = "book in charCtrl.character.books"><a target="_blank" class="btn" ng-click="charCtrl.sub(book)" href="#!/book/{{id}}">Click here to view Book</a>
         </div>
     </div>
     <a class="btn btn-default" href="#!/">Click here to go to Home Page</a>

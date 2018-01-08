@@ -2,7 +2,11 @@ myApp.controller('houseController', ['loadDataService','$routeParams','$scope', 
 
     var main = this;
     this.house = {};
-
+    $scope.id = "";
+    this.sub = function(character){
+        $scope.id = character.substring(character.lastIndexOf("/") + 1);
+        console.log($scope.id);
+    }
     $scope.loader = true; 
 
     loadDataService.getHouse($routeParams.id)

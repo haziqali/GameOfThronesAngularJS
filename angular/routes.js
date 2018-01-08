@@ -7,9 +7,7 @@ myApp.config(['$routeProvider', function ($routeProvider) {
     })
         .when('/book/:id', {
 
-        templateUrl: 'views/book-view.html',
-        controller: 'bookController',
-        controllerAs: 'bookCtrl'
+        templateUrl: 'views/book-view.html'
     })
         .when('/character/:id', {
 
@@ -25,7 +23,6 @@ myApp.config(['$routeProvider', function ($routeProvider) {
     })
 
         .otherwise({
-        //redirectTo:'/'
-        template: '<h1>404 page not found</h1>'
+        redirectTo:'/'
     });
 }]);

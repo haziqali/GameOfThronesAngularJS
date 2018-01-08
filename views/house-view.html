@@ -6,14 +6,15 @@
             <p class="card-text" >Coat Of Arms : {{houseCtrl.house.coatOfArms || 'Unavailable'}}</p>
             <p class="card-text" >Region : {{houseCtrl.house.region || 'Unavailable'}}</p>
             <p class="card-text" ng-repeat="weapon in houseCtrl.house.ancestralWeapons" ng-show = "{{weapon!=''}}">Ancestral Weapon : {{weapon}}</p>
-            <p class="card-text" ng-repeat="cdt in houseCtrl.house.cadetBranches" ng-show = "{{houseCtrl.house.cadetBranches}}">Cadet Branches : {{cdt}}</p>
-            <p class="card-text">Current Lord : <a href="{{houseCtrl.house.currentLord}}" target="_blank">{{houseCtrl.house.currentLord}}</a></p>
+            <p class="card-text" ng-repeat="cdt in houseCtrl.house.cadetBranches" ng-show = "{{houseCtrl.house.cadetBranches}}">Cadet House: <a target="_blank" class="btn" ng-click="houseCtrl.sub(cdt)" href="#!/house/{{id}}">Click here to view Cadet House</a></p>
+            
+            <p class="card-text">Current Lord : <a target="_blank" ng-click="houseCtrl.sub(houseCtrl.house.currentLord)" href="#!/character/{{id}}">Click here to view character</a></p>
             <p class="card-text">Died Out : {{houseCtrl.house.diedOut || 'Unavailable'}}</p>
             <p class="card-text">Founded : {{houseCtrl.house.founded || 'Unavailable'}}</p>
             <p class="card-text" ng-repeat="seat in houseCtrl.house.seats" ng-show="{{seat!=''}}">Seats : {{seat}}</p>
             <p class="card-text" ng-repeat="title in houseCtrl.house.titles" ng-show="{{title!=''}}">Titles : {{title}}</p>
-            <p class="card-text" >Overlord House : <a href="{{houseCtrl.house.overlord}}" target="_blank">{{houseCtrl.house.overlord}}</a></p>
-            <p class="card-text" ng-repeat = "member in houseCtrl.house.swornMembers">Sworn Members : <a href="{{member}}" target="_blank">{{member}}</a>
+            <p class="card-text">Overloard House: <a target="_blank" class="btn" ng-click="houseCtrl.sub(houseCtrl.house.overlord)" href="#!/house/{{id}}">Click here to view Overlord House</a>
+            <p class="card-text" ng-repeat = "member in houseCtrl.house.swornMembers"  >Sworn Members : <a href="{{member}}" target="_blank" ng-click="houseCtrl.sub(member)" >Click here to view Sworn Member</a>
             <p class="card-text"s>Words : {{houseCtrl.house.words || 'Unavailable'}}</p>
 
         </div>

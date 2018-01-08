@@ -17,8 +17,6 @@ myApp.controller('mainController', ['loadDataService','$scope', function (loadDa
               function errorCallback(response) {
         alert("some error occurred. Check the console.");
         $scope.loader = false;
-        console.log($scope.loader)
-        console.log(response);
     });
 
     loadDataService.getAllCharacters()

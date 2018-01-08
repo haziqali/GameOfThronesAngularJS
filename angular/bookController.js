@@ -1,10 +1,15 @@
 myApp.controller('bookController', ['loadDataService','$routeParams','$scope', function(loadDataService, $routeParams, $scope){
 
-    var main = this;
-    this.book = {}
-
     $scope.loader = true; 
-
+    var main = this;
+    this.book = {};
+    $scope.id = "";
+    
+    this.sub = function(character){
+        $scope.id = character.substring(character.lastIndexOf("/") + 1);
+        console.log($scope.id);
+    }
+    
     loadDataService.getBook($routeParams.id)
         .then(function successCallback(response) {
         main.book = response.data;
@@ -15,4 +20,7 @@ myApp.controller('bookController', ['loadDataService','$routeParams','$scope', f
         $scope.loader = false;
         console.log(response);
     });
+
+    
+     
 }])
